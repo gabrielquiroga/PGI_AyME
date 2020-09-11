@@ -1,0 +1,5 @@
+*.slxc
+*.slx.autosave
+matlab
+.m~
+slprj/
