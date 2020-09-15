@@ -57,14 +57,14 @@ T_ambmax = 40; %°C - Temperatura ambiente máxima
 
 
 disp('raices')
-_a = J_eq*L_q;
-_b = (L_q*b_eq + R_s*J_eq);
-_c = (R_s*b_eq + 1.5*(P_p^2)*(lambda_m^2));
-_s2 = (-_b + sqrt(_b^2 - 4*_a*_c))/(2*_a)
-_s3 = (-_b - sqrt(_b^2 - 4*_a*_c))/(2*_a)
-_z1 = -R_s/L_q
-_wn = sqrt((_c/_a))
-_zitta = (R_s/L_q + b_eq/J_eq)/(2*_wn)
+a = J_eq*L_q;
+b = (L_q*b_eq + R_s*J_eq);
+c = (R_s*b_eq + 1.5*(P_p^2)*(lambda_m^2));
+s2 = (- b + sqrt(b^2 - 4*a*c))/(2*a);
+s3 = (- b - sqrt(b^2 - 4*a*c))/(2*a);
+z1 = -R_s/L_q;
+wn = sqrt((c/a));
+zitta = (R_s/L_q + b_eq/J_eq)/(2*wn);
 
 
 
