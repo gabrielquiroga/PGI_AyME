@@ -10,6 +10,11 @@ delta_bl = 0.0630; %Variación para valor máximo o mínimo de viscosidad
 T_l = 0; %N*m (función escalón)
 delta_Tl = 1.57; %Variación para valor máximo o mínimo de torque de carga
 
+% Arreglo con los rangos de los parámetros
+Jl_range = [J_l-delta_Jl  J_l  J_l+delta_Jl];
+bl_range = [b_l-delta_bl  b_l  b_l+delta_bl];
+
+
 % Tren de transmisión
 
 r = 314.3008; %Relación de transmisión
@@ -28,6 +33,10 @@ b_m = 1.5e-5; %N*m/(rad/s)
 J_eq = J_m + J_l/r^2;
 b_eq = b_m + b_l/r^2;
 
+% Arreglo con los rangos de los parámetros equivalentes
+Jeq_range = J_m + Jl_range/r^2;
+beq_range = b_m + bl_range/r^2;
+
 %% Subsistema electromecánico
 
 P_p = 3; %Pares(6 polos) - Pares de polos
@@ -38,6 +47,7 @@ L_ls = 0.8e-3; %H - Inductancia de dispersión de estator
 R_s = 1.02; %ohm - Resistencia de estator a 40°C
 %R_s = 1.32; %ohm - Resistencia de estator a 115°C
 %R_s = R_sREF * (1 + alpha_Cu * (T_s - T_sREF))
+R_s_range = [1.02 1.32];
 
 %% Subsistema térmico
 
@@ -56,20 +66,10 @@ T_smax = 115; %°C - Temperatura máxima de bobinado estator
 T_ambmax = 40; %°C - Temperatura ambiente máxima
 
 
-disp('raices')
-a = J_eq*L_q;
-b = (L_q*b_eq + R_s*J_eq);
-c = (R_s*b_eq + 1.5*(P_p^2)*(lambda_m^2));
-s2 = (- b + sqrt(b^2 - 4*a*c))/(2*a);
-s3 = (- b - sqrt(b^2 - 4*a*c))/(2*a);
-z1 = -R_s/L_q;
-wn = sqrt((c/a));
-zitta = (R_s/L_q + b_eq/J_eq)/(2*wn);
-
-
 %% Modulador de torque
 
 Rp_q = 29; %Ohm
 Rp_d = 33; %Ohm
 Rp_0 = 4; %Ohm
 
+;
