@@ -73,9 +73,10 @@ Rp_d = 33; %Ohm
 Rp_0 = 4; %Ohm
 
 %% Observador y Estimador de Estimado
+polos_observador = 3200;
 
-Ke_theta = 1;
-Ke_w = 1;
+Ke_theta = 2*polos_observador - b_eq/J_eq;
+Ke_w = polos_observador^2 - Ke_theta * b_eq/J_eq;
 
 %% Controlador PID
 
