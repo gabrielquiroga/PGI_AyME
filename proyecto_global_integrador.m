@@ -72,4 +72,12 @@ Rp_q = 29; %Ohm
 Rp_d = 33; %Ohm
 Rp_0 = 4; %Ohm
 
-;
+
+%% Controlador PID
+
+n = 2.5;
+w_pos = 800; % rad/s
+
+b_a = J_eq * n * w_pos; % N*m/(rad/s)
+k_sa = J_eq * n * w_pos^2; % N*m/rad
+k_sia = J_eq * w_pos^3; % N*m(rad*s)
