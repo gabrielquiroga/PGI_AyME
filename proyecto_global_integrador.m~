@@ -69,7 +69,5 @@ zitta = (R_s/L_q + b_eq/J_eq)/(2*wn);
 
 %% Modulador de torque
 
-Rp_q = 29; %Ohm
-Rp_d = 33; %Ohm
-Rp_0 = 4; %Ohm
+R_q' = 29; %Ohm
 
