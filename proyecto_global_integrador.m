@@ -72,4 +72,7 @@ Rp_q = 29; %Ohm
 Rp_d = 33; %Ohm
 Rp_0 = 4; %Ohm
 
-;
+%% Observador y Estimador de Estimado
+
+Ke_theta = 1;
+Ke_w = 1;
