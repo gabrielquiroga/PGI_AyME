@@ -1,5 +1,5 @@
 *.slxc
 *.slx.autosave
 matlab
-.m~
+*.m~
 slprj/
