@@ -79,8 +79,8 @@ Ke_theta = 2*polos_observador - b_eq/J_eq;
 Ke_w = polos_observador^2 - Ke_theta * b_eq/J_eq;
 
 % Correción Accion Integral
-Ke_theta = 9597.74;
-Ke_w =30699997.7; 
+%Ke_theta = 9597.74;
+%Ke_w =30699997.7; 
 Ke_i = 3.28*10^10;
 
 %% Controlador PID
